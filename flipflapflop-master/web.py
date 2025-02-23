@@ -53,7 +53,7 @@ To show text, send a json with the text::
 
 from flask import Flask, request, render_template
 import displayprovider
-import configuration
+import configuration_sample as configuration
 import flipdotfont
 import time
 

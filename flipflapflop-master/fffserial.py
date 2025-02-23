@@ -6,7 +6,7 @@ communication with the device over a serial interface.
 
 import serial  # pip install pyserial
 import displayprovider
-import configuration
+import configuration_sample as configuration
 
 DEVICE = configuration.flipdotdisplay["serialdevice"]
 BAUD = configuration.flipdotdisplay["serialbaudrate"]

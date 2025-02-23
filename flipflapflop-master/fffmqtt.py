@@ -1,6 +1,6 @@
 import json
 import paho.mqtt.client
-import configuration
+import configuration_sample as configuration
 import displayprovider
 import logging
 

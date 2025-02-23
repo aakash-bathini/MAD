@@ -2,7 +2,7 @@ import pytmx
 import flipdotsim
 import threading
 import time
-import configuration
+import configuration_sample as configuration
 import pygame
 
 

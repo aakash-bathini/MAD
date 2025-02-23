@@ -16,7 +16,7 @@ import time
 import random
 import util
 import abc
-import configuration
+import configuration_sample as configuration
 import rogueflip
 import pygame
 import pygame.time
@@ -494,7 +494,7 @@ def test_demos():
 
 def main():
     import displayprovider
-    import configuration
+    import configuration_sample as configuration
     fdd = displayprovider.get_display(
         width=configuration.WIDTH, height=configuration.HEIGHT,
         fallback=displayprovider.Fallback.SIMULATOR)

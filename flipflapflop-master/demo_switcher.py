@@ -49,7 +49,7 @@ class DemoSwitcher:
 
 def main():
     import displayprovider
-    import configuration
+    import configuration_sample as configuration
     fdd = displayprovider.get_display(
         width=configuration.WIDTH, height=configuration.HEIGHT,
         fallback=displayprovider.Fallback.SIMULATOR)

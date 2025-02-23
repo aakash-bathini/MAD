@@ -1,5 +1,5 @@
 import cv2 # pip install opencv-python
-import configuration
+import configuration_sample as configuration
 import displayprovider
 import time 
 

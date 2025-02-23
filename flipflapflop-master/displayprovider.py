@@ -6,7 +6,7 @@ available.
 
 """
 import enum
-import configuration
+import configuration_sample as configuration
 
 class Fallback(enum.Enum):
     SIMULATOR = "simulator"
