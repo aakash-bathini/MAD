@@ -1,0 +1,42 @@
+# Pycharm project files
+.idea
+
+# VS Code settings
+.vscode/
+
+# Backup files
+*~
+
+# folder with micropython interpreter.
+micropython/
+__pycache__/
+venv/
+
+# generated documentation
+docgen/_build/
+configuration.py
+
+# ignoring Mac files with metadata
+.DS_Store
+
+# goto project files
+godot_emu/.import/
+godot_emu/export/
+godot_client/.import/
+godot_client/export/
+
+# jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# ignoring dir of ii
+ressources/gamejamdo_2020-05/iidir/
+ressources/gamejamdo_2020-05/ii/
+
+poetry.lock
+
+# test cache
+.pytest_cache/
+
+# ignoring log files
+ressources/38c3/rogueflip.log
+ressources/38c3/mqtt2display.log

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xml:lang="de" lang="de" 
+      xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Flipdot Flut</title>
+    <!-- classless stylesheet: https://watercss.kognise.dev/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+  </head>
+  
+  <body>
+    <h1>Flipdot Flut</h1>
+
+    <p>Das Display kann aus der Ferne gesteuert werden. </p>
+
+    <p>Dimension: {{ dimension }}</p>
+
+    <p><code>{{ request.host }}/display</code><br>
+      erwartet einen POST-Request mit einem JSON-Objekt, der
+      einen Text enthält, der auf dem Display dargestellt werden soll.
+      (<a href="https://tbs1-bo.github.io/flipflapflop/web.html#web.route_display_post">Details</a>):
+      <br>
+      <code>
+        {
+          "text": "Hallo Welt"
+        }
+      </code>
+
+  </p>
+  <form>
+      <input type="text" id='data' name='data'>
+      <input type="button" value="Anzeigen" onclick="showTxt()">
+  </form>
+
+    <script>
+      function showTxt() {
+        let data = {
+          "text": document.getElementById('data').value
+        };
+
+        fetch('{{ request.host_url }}/display', {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          method: 'POST',          
+          body: JSON.stringify(data)
+        })
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
+      </script>
+  </body>
+</html>
