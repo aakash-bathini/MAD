@@ -6,8 +6,7 @@ available.
 
 """
 import enum
-#import configuration
-import configuration_sample
+import configuration
 
 class Fallback(enum.Enum):
     SIMULATOR = "simulator"
@@ -39,23 +38,23 @@ class DisplayBase:
         "Turn LED of the display on (True) or off (False)"
         pass
 
-def get_display(width=configuration_sample.WIDTH, height=configuration_sample.HEIGHT, fallback=Fallback.SIMULATOR):
+def get_display(width=configuration.WIDTH, height=configuration.HEIGHT, fallback=Fallback.SIMULATOR):
     print("Creating display with width", width, "and height", height)
     try:
         import fffserial
         return fffserial.SerialDisplay(
             width=width, height=height, 
-            serial_device=configuration_sample.flipdotdisplay['serialdevice'],
-            baud=configuration_sample.flipdotdisplay['serialbaudrate'],
-            buffered=configuration_sample.flipdotdisplay['buffered'])
+            serial_device=configuration.flipdotdisplay['serialdevice'],
+            baud=configuration.flipdotdisplay['serialbaudrate'],
+            buffered=configuration.flipdotdisplay['buffered'])
 
     except Exception as e:
         print("Unable to create FlipDotDisplay:", e,
               "\nFalling back to", fallback)
 
         if fallback == Fallback.SIMULATOR:
-            fps = configuration_sample.simulator['fps']
-            impl = configuration_sample.simulator.get('implementation', 'pygame')
+            fps = configuration.simulator['fps']
+            impl = configuration.simulator.get('implementation', 'pygame')
             print("Using simulator with", impl, "implementation and", fps, "fps")
             if impl == "pygame":
                 import flipdotsim
